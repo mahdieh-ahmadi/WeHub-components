@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Input, InputProps } from '../src';
+import { RadioButton, RadioButtonProps } from '../src';
 
 const meta: Meta = {
-  title: 'Welcome',
-  component: Input,
+  title: 'radio button',
+  component: RadioButton,
   argTypes: {
     children: {
       control: {
@@ -19,10 +19,14 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<InputProps> = args => <Input {...args} />;
+const InputTemplate: Story<RadioButtonProps> = args => (
+  <RadioButton {...args} />
+);
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
 // https://storybook.js.org/docs/react/workflows/unit-testing
-export const Default = Template.bind({});
+export const Simple = InputTemplate.bind({});
 
-Default.args = {};
+Simple.args = {
+    label: 'radio label'
+};
