@@ -1,39 +1,23 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
+import './input.css';
 
 export interface InputProps {
   onChange: (value: string) => void;
   value: string | number;
   label?: string;
   placeHolder?: string;
+  style?: CSSProperties;
+  className?: string;
 }
 
 export const Input = (props: InputProps) => {
-  const { label, onChange, value, placeHolder } = props;
+  const { label, onChange, value, placeHolder, style, className } = props;
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-      {label && (
-        <label
-          style={{
-            marginBottom: '8px',
-            fontWeight: '600',
-            color: '#40454F',
-            fontSize: '14px',
-          }}
-        >
-          {label}
-        </label>
-      )}
+    <div style={style} className={`WeHub-componentInput ${className}`}>
+      {label && <label className="WeHub-componentInput__label">{label}</label>}
       <input
-        style={{
-          border: '1px solid #D0D6DC',
-          padding: '8px 6px',
-          borderRadius: '8px',
-          color: '#40454F',
-          fontSize: '14px',
-          width: '100%',
-          outline: 'none'
-        }}
+        className="WeHub-componentInput__input"
         placeholder={placeHolder}
         value={value}
         onChange={e => onChange(e.target.value)}

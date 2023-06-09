@@ -1,4 +1,5 @@
 import React, { ChangeEvent, useState } from 'react';
+import './RadioButton.css';
 
 export interface RadioButtonProps {
   label: string;
@@ -22,27 +23,14 @@ export const RadioButton = (props: RadioButtonProps) => {
   };
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'start',
-      }}
-    >
+    <div className="WeHub-componentRadioBtn">
       <input
         onChange={changeRadioActivation}
+        className="WeHub-componentRadioBtn__input"
+        type="radio"
         style={{
           border: isCheck ? '5px solid #007A66' : '1.5px solid #D0D6DC',
-          transition: 'all 0.2s',
-          background: '#F6F7F9',
-          margin: 0,
-            appearance: 'none',
-          width: '18px',
-          height: '18px',
-          borderRadius: '50px',
-          cursor: 'pointer',
         }}
-        type="radio"
         id={id || randomId}
         name={name}
         value={value}
@@ -50,12 +38,7 @@ export const RadioButton = (props: RadioButtonProps) => {
       />
       <label
         htmlFor={id || randomId}
-        style={{
-          color: '#40454F',
-          fontWeight: '600',
-          fontSize: '16px',
-          marginLeft: '8px',
-        }}
+        className="WeHub-componentRadioBtn__label"
       >
         {label}
       </label>

@@ -1,0 +1,23 @@
+.WeHub-componentRadioBtn {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.WeHub-componentRadioBtn__input {
+  transition: all 0.2s;
+  background: #f6f7f9;
+  margin: 0;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.WeHub-componentRadioBtn__label {
+  color: #40454f;
+  font-weight: 600;
+  font-size: 16px;
+  margin-left: 8px;
+}
