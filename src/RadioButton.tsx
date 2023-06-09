@@ -1,8 +1,8 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent } from 'react';
 
 export interface RadioButtonProps {
   label: string;
-  checked: boolean;
+  active: boolean;
   id?: string;
   name?: string;
   value?: string;
@@ -12,12 +12,9 @@ export interface RadioButtonProps {
 const randomId = String(Math.random());
 
 export const RadioButton = (props: RadioButtonProps) => {
-  const { checked, label, name, id, value, onChange } = props;
-
-  const [isCheck, setIsCheck] = useState(checked);
+  const { active, label, name, id, value, onChange } = props;
 
   const changeRadioActivation = (e: ChangeEvent<HTMLInputElement>) => {
-    if (isCheck !== !!e.target.checked) setIsCheck(!!e.target.checked);
     if (onChange) onChange(!!e.target.checked);
   };
 
@@ -40,6 +37,11 @@ export const RadioButton = (props: RadioButtonProps) => {
         height: 18px;
         border-radius: 50px;
         cursor: pointer;
+        border: 1.5px solid #D0D6DC;
+      }
+
+      .WeHub-componentRadioBtn__input:checked {
+        border: 5px solid #007A66;
       }
       
       .WeHub-componentRadioBtn__label {
@@ -56,13 +58,10 @@ export const RadioButton = (props: RadioButtonProps) => {
           onChange={changeRadioActivation}
           className="WeHub-componentRadioBtn__input"
           type="radio"
-          style={{
-            border: isCheck ? '5px solid #007A66' : '1.5px solid #D0D6DC',
-          }}
           id={id || randomId}
           name={name}
           value={value}
-          checked={checked}
+          checked={active}
         />
         <label
           htmlFor={id || randomId}
