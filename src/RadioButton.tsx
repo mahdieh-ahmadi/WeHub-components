@@ -17,8 +17,8 @@ export const RadioButton = (props: RadioButtonProps) => {
   const [isCheck, setIsCheck] = useState(checked);
 
   const changeRadioActivation = (e: ChangeEvent<HTMLInputElement>) => {
-    if (isCheck !== !!e.target?.checked) setIsCheck(!!e.target?.checked);
-    if (onChange) onChange(!!e.target?.checked);
+    if (isCheck !== !!e.target.checked) setIsCheck(!!e.target.checked);
+    if (onChange) onChange(!!e.target.checked);
   };
 
   return (
