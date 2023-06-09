@@ -2,12 +2,12 @@ import React from 'react';
 import { Input } from './Input';
 
 export interface InputArrayProps {
-  inputs: {
+  inputs: Array<{
     value: string | number;
     label: string;
     key: string;
     placeHolder?: string;
-  }[];
+  }>;
   onChange: (value: string, key: string) => void;
   hasDeleteOption?: boolean;
   DeleteFunc?: () => void;
@@ -36,12 +36,11 @@ export const InputArray = (props: InputArrayProps) => {
     </svg>
   );
 
-  return (
-    <div
-      style={{ display: 'flex', alignItems: 'end', justifyContent: 'start' }}
-      className={className}
-    >
-      {inputs?.map(item => (
+  const inputsComponent = () => {
+    const componentList: JSX.Element[] = [];
+    for (let i = 0; i < inputs.length; i++) {
+      const item = inputs[i];
+      componentList.push(
         <Input
           onChange={value => onChange(value, item.key)}
           value={item.value}
@@ -50,7 +49,17 @@ export const InputArray = (props: InputArrayProps) => {
           placeHolder={item.placeHolder}
           style={{ marginRight: '12px', width: 'auto', flex: '1' }}
         />
-      ))}
+      );
+    }
+    return componentList;
+  };
+
+  return (
+    <div
+      style={{ display: 'flex', alignItems: 'end', justifyContent: 'start' }}
+      className={className}
+    >
+      {inputsComponent()}
       {hasDeleteOption && deleteIcon()}
     </div>
   );

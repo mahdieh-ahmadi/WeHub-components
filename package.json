@@ -5,7 +5,8 @@
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
-    "src"
+    "src",
+    "src/*.css"
   ],
   "engines": {
     "node": ">=10"
@@ -35,7 +36,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "wehub-components",
+  "name": "@mahah7878/wehub-components",
   "author": "mahdieh",
   "module": "dist/wehub-components.esm.js",
   "size-limit": [
@@ -77,5 +78,8 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.5.3",
     "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "rollup-plugin-postcss": "^4.0.2"
   }
 }
