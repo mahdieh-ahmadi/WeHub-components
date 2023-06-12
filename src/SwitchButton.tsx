@@ -8,6 +8,7 @@ export interface SwitchButtonProps {
 
 export const SwitchButton = (props: SwitchButtonProps) => {
   const { isRounded, onChange, checked } = props;
+  const randomId = String(Math.random());
 
   return (
     <>
@@ -74,11 +75,11 @@ export const SwitchButton = (props: SwitchButtonProps) => {
       `}
       </style>
       <label
-        htmlFor="weHub_componentsSwitchBtn__input"
+        htmlFor={`weHub_componentsSwitchBtn__input-${randomId}`}
         className="weHub_componentsSwitchBtn"
       >
         <input
-          id="weHub_componentsSwitchBtn__input"
+          id={`weHub_componentsSwitchBtn__input-${randomId}`}
           className="weHub_componentsSwitchBtn__input"
           type="checkbox"
           onChange={e => onChange(e.target.checked)}

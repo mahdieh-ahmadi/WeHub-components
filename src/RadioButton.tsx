@@ -9,9 +9,8 @@ export interface RadioButtonProps {
   onChange?: (value: boolean) => void;
 }
 
-const randomId = String(Math.random());
-
 export const RadioButton = (props: RadioButtonProps) => {
+  const randomId = String(Math.random());
   const { active, label, name, id, value, onChange } = props;
 
   const changeRadioActivation = (e: ChangeEvent<HTMLInputElement>) => {
