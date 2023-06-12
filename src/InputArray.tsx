@@ -23,7 +23,7 @@ export const InputArray = (props: InputArrayProps) => {
       height="18"
       viewBox="0 0 16 18"
       fill="none"
-      style={{ marginBottom: '10px', cursor: 'pointer' }}
+      style={{ marginBottom: '12px', cursor: 'pointer' }}
       onClick={DeleteFunc}
     >
       <path

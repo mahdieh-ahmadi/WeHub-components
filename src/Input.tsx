@@ -31,7 +31,7 @@ export const Input = (props: InputProps) => {
       
       .WeHub-componentInput__input {
         border: 1px solid #d0d6dc;
-        padding: 8px 6px;
+        padding: 12px;
         border-radius: 8px;
         color: #40454f;
         font-size: 14px;
