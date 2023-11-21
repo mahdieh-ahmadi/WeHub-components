@@ -10,7 +10,7 @@ export interface InputProps {
   type?: InputType;
 }
 
-enum InputType {
+export enum InputType {
   text = 'text',
   password = 'password',
   number = 'number',
