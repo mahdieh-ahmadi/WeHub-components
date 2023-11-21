@@ -7,6 +7,13 @@ export interface InputProps {
   placeHolder?: string;
   style?: CSSProperties;
   className?: string;
+  type?: InputType;
+}
+
+enum InputType {
+  text = 'text',
+  password = 'password',
+  number = 'number',
 }
 
 export const Input = (props: InputProps) => {
@@ -51,6 +58,7 @@ export const Input = (props: InputProps) => {
           placeholder={placeHolder}
           value={value}
           onChange={e => onChange(e.target.value)}
+          type={props.type || InputType.text}
         />
       </div>
     </>
