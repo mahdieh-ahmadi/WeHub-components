@@ -5,11 +5,10 @@ export interface SwitchButtonProps {
   onChange: (active: boolean) => void;
   checked?: boolean;
   enable?: boolean;
-  className?: string
 }
 
 export const SwitchButton = (props: SwitchButtonProps) => {
-  const { isRounded, onChange, checked, enable, className } = props;
+  const { isRounded, onChange, checked, enable } = props;
   const randomId = String(Math.random());
 
   return (
@@ -73,7 +72,6 @@ export const SwitchButton = (props: SwitchButtonProps) => {
       .weHub_componentsSwitchBtn__slider--round::before {
         border-radius: 12px;
       }
-      ${...styles}
       `}
       </style>
       <label
@@ -82,11 +80,11 @@ export const SwitchButton = (props: SwitchButtonProps) => {
       >
         <input
           id={`weHub_componentsSwitchBtn__input-${randomId}`}
-          className={`weHub_componentsSwitchBtn__input ${...className}`}
+          className={`weHub_componentsSwitchBtn__input`}
           type="checkbox"
           onChange={e => onChange(e.target.checked)}
           checked={checked}
-          disabled = {!enable}
+          disabled={!enable}
         />
         <span
           className={`weHub_componentsSwitchBtn__slider
